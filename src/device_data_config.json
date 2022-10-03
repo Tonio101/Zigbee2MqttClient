@@ -1,0 +1,44 @@
+{
+  "features": {
+    "localMQTT": true,
+    "influxDB": true,
+    "inputQueueSize": 64
+  },
+  "influxdb": {
+    "url": "http://localhost:8086/write",
+    "auth": {
+      "user": "",
+      "pasw": ""
+    },
+    "dbName": ""
+  },
+  "mqttBroker": {
+    "user": "",
+    "pasw": "",
+    "host": "",
+    "port": 1883,
+    "mqttTopic": "zigbee2mqtt/#"
+  },
+  "sensors": [
+    {
+      "type": "THSensor",
+      "deviceId": "0x00158d0008479915",
+      "friendlyName": "Garage TH Sensor",
+      "model": "WSDCGQ11LM",
+      "mqttTopic": "zigbee2mqtt/0x00158d0008479915",
+      "infludbMeasurement": "weather",
+      "influxdbTagSet": "location=garage",
+      "influxdbFieldSet": "temperature={},humidity={}"
+    },
+    {
+      "type": "THSensor",
+      "deviceId": "0x00158d000807197f",
+      "friendlyName": "Living Room TH Sensor",
+      "model": "WSDCGQ11LM",
+      "mqttTopic": "zigbee2mqtt/0x00158d000807197f",
+      "infludbMeasurement": "weather",
+      "influxdbTagSet": "location=living_room",
+      "influxdbFieldSet": "temperature={},humidity={}"
+    }
+  ]
+}
